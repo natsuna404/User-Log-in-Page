@@ -16,12 +16,11 @@ public class Login extends JPanel  {
 	JButton clear = new JButton("Clear");
 	JButton exit = new JButton("Exit");
 	
-	public Login(Color color){
+	public Login(){
 		
 		setBounds(0, 0, 600, 400);
 		setVisible(true);
 		setLayout(null);
-		setBackground(color);
 		
 		
 		userNameLabel.setBounds(50, 25, 100, 100);
@@ -56,7 +55,15 @@ public class Login extends JPanel  {
 		login.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Main.ChangeScreen(Screen.Welcome);
+				
+				System.out.println(passwordTextField.getText());
+				if(ProfileManager.canLogin(userNameTextField.getText(), passwordTextField.getText())){
+					Main.ChangeScreen(Screen.Welcome);
+					ProfileManager.currentUserNameLoggedIn = userNameTextField.getText();
+					ProfileManager.currentPasswordLoggedIn = passwordTextField.getText();
+				}else {
+					JOptionPane.showMessageDialog(Main.window,"Wrong username or password!");
+				}
 			}
 		});
 		

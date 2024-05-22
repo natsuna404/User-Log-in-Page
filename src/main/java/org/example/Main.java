@@ -9,9 +9,9 @@ public class Main {
 	public static Screen screenState = Screen.Login;
 	
 	
-	public static Login loginScreen = new Login(Color.WHITE);
-	public static Login editProfile = new Login(Color.RED);
-	public static LandingPage welcomeScreen = new LandingPage(Color.YELLOW);
+	public static Login loginScreen = new Login();
+	public static EditProfile editProfile = new EditProfile();
+	public static LandingPage welcomeScreen = new LandingPage();
 	
 	public static JFrame window = new JFrame("Login");
 	public static ProfileManager profileManager;
@@ -19,7 +19,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		profileManager = new  ProfileManager("src/main/java/org/example/profile.txt");
+		profileManager = new  ProfileManager("src/main/java/org/example/profiles.json");
 		
 
 		window.setVisible(true);

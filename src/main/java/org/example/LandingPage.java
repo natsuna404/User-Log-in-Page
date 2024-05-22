@@ -14,12 +14,11 @@ public class LandingPage extends JPanel {
 	JButton editP = new JButton("Edit Profile");
 	JButton log_out = new JButton("Log out");
 	
-	public LandingPage(Color color) {
+	public LandingPage() {
 		
 		setBounds(0, 0, 600, 400);
 		setVisible(true);
 		setLayout(null);
-		setBackground(color);
 		
 		
 		msg.setBounds(260,10,500,10);	

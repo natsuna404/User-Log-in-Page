@@ -23,7 +23,7 @@ public class EditProfile extends JPanel {
         setLayout(null);
 
         title.setBounds(200,20,200,25);
-        changeUsername.setBounds(0,0,600,400);
+        changeUsername.setBounds(50, -125,600,400);
         tf1.setBounds(200,62,200,25);
         confirmUsername.setBounds(50,75,150,100);
         tf2.setBounds(200,112,200,25);
@@ -50,13 +50,17 @@ public class EditProfile extends JPanel {
         saveChanges.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                if(tf1.getText().equals(tf2.getText()) && tf3.getText().equals(tf4.getText())){
+                    ProfileManager.changeProfile(tf2.getText(), tf4.getText());
+                    Main.ChangeScreen(Screen.Welcome);
+                    
+                }
             }
         });
         cancel.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                Main.ChangeScreen(Screen.Welcome);
             }
         });
 
