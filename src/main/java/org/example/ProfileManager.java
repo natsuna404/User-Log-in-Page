@@ -7,6 +7,7 @@ import java.util.Map;
 public class ProfileManager {
 	
 	
+
 	private File currentFile;
 	private String fileContext = "";
 	private String FilePath;
@@ -46,7 +47,6 @@ public class ProfileManager {
 		}
 		
 		System.out.println(profiles);
-		
 	}
 	
 	
