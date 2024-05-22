@@ -9,9 +9,9 @@ public class Main {
 	public static Screen screenState = Screen.Login;
 	
 	
-	public static Login loginScreen = new Login();
-	public static EditProfile editProfile = new EditProfile();
-	public static LandingPage welcomeScreen = new LandingPage();
+	public static Login loginScreen;
+	public static EditProfile editProfile;
+	public static LandingPage welcomeScreen;
 	
 	public static JFrame window = new JFrame("Login");
 	public static ProfileManager profileManager;
@@ -20,6 +20,10 @@ public class Main {
 	public static void main(String[] args) {
 		
 		profileManager = new  ProfileManager("src/main/java/org/example/profiles.json");
+		
+		loginScreen = new Login();
+		editProfile = new EditProfile();
+		welcomeScreen = new LandingPage();
 		
 
 		window.setVisible(true);
@@ -52,6 +56,7 @@ public class Main {
 		}else if(screenState == Screen.Welcome){
 			loginScreen.setVisible(false);
 			editProfile.setVisible(false);
+			welcomeScreen.SetMessage();
 			welcomeScreen.setVisible(true);
 		}
 	}

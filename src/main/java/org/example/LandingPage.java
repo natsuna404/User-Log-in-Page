@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 
 public class LandingPage extends JPanel {
 	
-	JLabel msg = new JLabel("WELCOME");
+	JLabel msg = new JLabel();
 	JButton editP = new JButton("Edit Profile");
 	JButton log_out = new JButton("Log out");
 	
@@ -21,9 +21,13 @@ public class LandingPage extends JPanel {
 		setLayout(null);
 		
 		
-		msg.setBounds(260,10,500,10);	
+		
+		msg.setBounds(260,10,500,15);
 		editP.setBounds(20,310,100,25);
 		log_out.setBounds(470,310,100,25);
+		
+		
+		
 		
 		add(msg);
 		add(editP);
@@ -45,6 +49,11 @@ public class LandingPage extends JPanel {
 			}
 		});
 		
+	}
+	
+	
+	public void SetMessage(){
+		msg.setText("Welcome " + ProfileManager.currentUserNameLoggedIn + "!");
 	}
 		
 	

@@ -56,11 +56,11 @@ public class Login extends JPanel  {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				System.out.println(passwordTextField.getText());
 				if(ProfileManager.canLogin(userNameTextField.getText(), passwordTextField.getText())){
-					Main.ChangeScreen(Screen.Welcome);
 					ProfileManager.currentUserNameLoggedIn = userNameTextField.getText();
 					ProfileManager.currentPasswordLoggedIn = passwordTextField.getText();
+					
+					Main.ChangeScreen(Screen.Welcome);
 				}else {
 					JOptionPane.showMessageDialog(Main.window,"Wrong username or password!");
 				}
