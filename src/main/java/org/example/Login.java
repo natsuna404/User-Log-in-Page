@@ -16,11 +16,12 @@ public class Login extends JPanel  {
 	JButton clear = new JButton("Clear");
 	JButton exit = new JButton("Exit");
 	
-	public Login(){
+	public Login(Color color){
 		
 		setBounds(0, 0, 600, 400);
 		setVisible(true);
 		setLayout(null);
+		setBackground(color);
 		
 		
 		userNameLabel.setBounds(50, 25, 100, 100);
@@ -56,7 +57,7 @@ public class Login extends JPanel  {
 		login.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-			
+				Main.ChangeScreen(Screen.EditProfile);
 			}
 		});
 		

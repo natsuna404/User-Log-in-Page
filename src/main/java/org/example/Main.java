@@ -1,16 +1,19 @@
 package org.example;
 
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
 
 public class Main {
 	
-	public static int screenState = 0;
+	public static Screen screenState = Screen.Welcome;
 	
-	public static Login loginScreen = new Login();
+	public static Login loginScreen = new Login(Color.WHITE);
+	public static Login editProfile = new Login(Color.RED);
+	public static Login welcomeScreen = new Login(Color.YELLOW);
 	
 	public static JFrame window = new JFrame("Login");
+	
+	public ProfileManager profileManager = new ProfileManager("resources/profile.txt");
 	
 	public static void main(String[] args) {
 		
@@ -22,20 +25,30 @@ public class Main {
 		
 		
 		window.add(loginScreen);
+		window.add(editProfile);
+		window.add(welcomeScreen);
+		
+		ChangeScreen(screenState);
 		
 	}
 	
-//
-//	public static void ChangeScreen(int screen){
-//
-//		screenState = screen;
-//
-//		if (screenState == 0) {
-//			loginScreen.setVisible(true);
-//		}else if(screenState == 1){
-//			loginScreen.setVisible(false);
-//		}else if(screenState == 2){
-//			loginScreen.setVisible(false);
-//		}
-//	}
+
+	public static void ChangeScreen(Screen nextScreen){
+
+		screenState = nextScreen;
+
+		if (screenState == Screen.Login) {
+			loginScreen.setVisible(true);
+			editProfile.setVisible(false);
+			welcomeScreen.setVisible(false);
+		}else if(screenState == Screen.EditProfile){
+			loginScreen.setVisible(false);
+			editProfile.setVisible(true);
+			welcomeScreen.setVisible(false);
+		}else if(screenState == Screen.Welcome){
+			loginScreen.setVisible(false);
+			editProfile.setVisible(false);
+			welcomeScreen.setVisible(true);
+		}
+	}
 }
