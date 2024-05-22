@@ -1,0 +1,11 @@
+username: Owner
+password: 1234
+
+username: Manager
+password: 1234
+
+username: Cashier
+password: 1234
+
+username: Sales
+password: 1234
