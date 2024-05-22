@@ -45,7 +45,6 @@ public class Login extends JPanel  {
 		
 		
 		
-		
 		add(login);
 		add(exit);
 		add(clear);
@@ -57,7 +56,7 @@ public class Login extends JPanel  {
 		login.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Main.ChangeScreen(Screen.EditProfile);
+				Main.ChangeScreen(Screen.Welcome);
 			}
 		});
 		

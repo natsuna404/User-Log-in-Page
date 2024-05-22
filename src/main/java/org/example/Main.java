@@ -5,8 +5,21 @@ import javax.swing.*;
 
 public class Main {
 
+	
+	public static Screen screenState = Screen.Login;
+	
+	
+	public static Login loginScreen = new Login(Color.WHITE);
+	public static Login editProfile = new Login(Color.RED);
+	public static LandingPage welcomeScreen = new LandingPage(Color.YELLOW);
+	
+	public static JFrame window = new JFrame("Login");
+	
+	public ProfileManager profileManager = new ProfileManager("resources/profile.txt");
+
 	public static void main(String[] args) {
 		
+
 		window.setVisible(true);
 		window.setLayout(null);
 		window.setSize(600, 400);
