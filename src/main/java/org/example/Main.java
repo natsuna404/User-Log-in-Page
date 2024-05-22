@@ -14,10 +14,12 @@ public class Main {
 	public static LandingPage welcomeScreen = new LandingPage(Color.YELLOW);
 	
 	public static JFrame window = new JFrame("Login");
+	public static ProfileManager profileManager;
 	
-	public ProfileManager profileManager = new ProfileManager("resources/profile.txt");
-
+	
 	public static void main(String[] args) {
+		
+		profileManager = new  ProfileManager("src/main/java/org/example/profile.txt");
 		
 
 		window.setVisible(true);
