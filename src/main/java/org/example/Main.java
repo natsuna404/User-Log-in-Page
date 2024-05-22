@@ -5,11 +5,12 @@ import javax.swing.*;
 
 public class Main {
 	
-	public static Screen screenState = Screen.Welcome;
+	public static Screen screenState = Screen.Login;
+	
 	
 	public static Login loginScreen = new Login(Color.WHITE);
 	public static Login editProfile = new Login(Color.RED);
-	public static Login welcomeScreen = new Login(Color.YELLOW);
+	public static LandingPage welcomeScreen = new LandingPage(Color.YELLOW);
 	
 	public static JFrame window = new JFrame("Login");
 	
@@ -17,7 +18,8 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-	
+		window.setFocusable(true);
+		window.setResizable(false);
 		window.setVisible(true);
 		window.setLayout(null);
 		window.setSize(600, 400);
