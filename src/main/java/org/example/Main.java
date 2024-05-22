@@ -4,6 +4,7 @@ import java.awt.*;
 import javax.swing.*;
 
 public class Main {
+
 	
 	public static Screen screenState = Screen.Login;
 	
@@ -15,11 +16,10 @@ public class Main {
 	public static JFrame window = new JFrame("Login");
 	
 	public ProfileManager profileManager = new ProfileManager("resources/profile.txt");
-	
+
 	public static void main(String[] args) {
 		
-		window.setFocusable(true);
-		window.setResizable(false);
+
 		window.setVisible(true);
 		window.setLayout(null);
 		window.setSize(600, 400);
